@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, footer, section {
+    background-color: rgb(187, 187, 187);
+    border: solid 1px black;
+}
+
+header, footer {
+    height: 100px;
+    clear: both;
+}
+
+section {
+    height: 500px;
+    float: left;
+    width: 20%;
+}
+
+.large {
+    width: 40%
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        background-color: green;
+    }
+}
+
+@media (min-width:601px) and (max-width: 900px) {
+    section {
+        background-color: blue;
+        width: 33.333%
+    }
+
+    .large {
+        display: none;
+    }
+}

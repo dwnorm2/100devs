@@ -1,0 +1,303 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  /* border: red 1px solid; */
+}
+
+header svg {
+  display: none;
+}
+
+main {
+  background-color: rgb(246, 249, 252);
+  /* background-color: rgb(149, 202, 255); */
+}
+
+header > ul {
+  margin: 0 auto;
+  width: 100%;
+}
+
+header > ul * {
+}
+
+header li {
+  float: left;
+  text-align: center;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.headerButton {
+  float: right;
+  width: 15%;
+  margin-top: 13px;
+  /* border: 1px solid red; */
+}
+
+.headerButton a {
+  color: white;
+  background-color: rgb(43, 62, 80);
+  padding: 6px 15px 7px 15px;
+  font-size: 0.8em;
+}
+
+.middleNav {
+  width: 70%;
+  margin-top: 13px;
+  /* border: 1px solid red; */
+}
+
+.middleNav * {
+  display: inline-block;
+  width: auto;
+  color: rgb(121, 132, 145);
+}
+
+.middleNav ul li {
+  margin-right: 20px;
+}
+
+.logo {
+  width: 15%;
+  /* border: 1px solid red; */
+}
+
+.logo a {
+  color: rgb(43, 62, 80);
+}
+
+.top {
+  padding: 80px 0 80px 150px;
+}
+
+.top section,
+.top img {
+  float: left;
+  /* width: 50%; */
+}
+
+.top img {
+  width: 60%;
+  float: right;
+  max-width: 600px;
+}
+
+.tagline {
+  margin-top: 60px;
+  width: 40%;
+  max-width: 300px;
+}
+
+.tagline span {
+  color: rgb(150, 163, 178);
+  font-size: 0.8em;
+}
+
+.tagline h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.tagline input {
+  border: none;
+  background-color: rgb(226, 233, 239);
+  padding: 7px 70px 7px 10px;
+  font-size: 0.8em;
+  margin-top: 15px;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 0.8em;
+  color: rgb(121, 132, 145);
+  line-height: 17px;
+}
+
+.tagline p {
+  max-width: 90%;
+}
+
+.tagline a {
+  color: white;
+  background-color: rgb(43, 62, 80);
+  padding: 6px 15px 7px 15px;
+  font-size: 0.8em;
+  margin-left: -3px;
+}
+
+.features > section {
+  float: left;
+  width: 25%;
+  padding: 0 50px;
+  /* max-width: 250px; */
+}
+
+.features a {
+  color: rgb(43, 62, 80);
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.features img {
+  width: 40px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.features,
+.bottom {
+  padding: 150px 80px 250px 100px;
+}
+
+.bottom {
+  padding-left: 150px;
+  width: 60%;
+  margin-top: -100px;
+}
+
+.bottom p {
+  width: 80%;
+  color: rgb(150, 163, 178);
+  font-size: 0.8em;
+}
+
+.bottom h2 {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+footer {
+}
+
+.bottomBox {
+  background-color: rgb(246, 249, 252);
+
+  height: 500px;
+  margin: -200px 150px;
+}
+
+.colors {
+  /* dark blueish */
+  color: rgb(43, 62, 80);
+  /* light grey */
+  color: rgb(150, 163, 178);
+  /* main text */
+  color: rgb(121, 132, 145);
+}
+/* 
+@media (max-width: 800px) {
+  body {
+    background-color: aqua;
+  }
+} */
+
+/* @media screen and (max-width: 600px) {
+  body {
+    background-color: green;
+  }
+} */
+
+@media only screen and (max-width: 650px) {
+  .middleNav,
+  .headerButton {
+    display: none;
+  }
+
+  .logo {
+    float: none;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1em;
+  }
+
+  header {
+    border-bottom: solid rgb(150, 163, 178) 1px;
+  }
+  .top section,
+  .top img {
+    float: none;
+    width: 100%;
+    margin: 20px auto;
+    max-width: none;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .tagline a {
+    padding-left: 44.5%;
+    padding-right: 44.5%;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .tagline p {
+    margin-top: 30px;
+    font-size: 1.1em;
+  }
+
+  .top {
+    padding: 15px;
+  }
+
+  .features section {
+    float: none;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .features {
+    padding: 0;
+  }
+
+  header svg {
+    display: block;
+    margin-top: 19px;
+    margin-left: 15px;
+  }
+}

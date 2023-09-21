@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, footer, section {
+    background-color: rgb(187, 187, 187);
+    border: solid 1px black;
+}
+
+header, footer {
+    height: 100px;
+    clear: both;
+}
+
+.three-row {
+    width: 33.33%;
+    height: 200px;
+}
+
+.two-row {
+    width: 50%;
+    height: 300px;
+}
+
+
+.two-row, .three-row {
+    float: left;
+}

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, footer, section {
+    background-color: rgb(187, 187, 187);
+    border: solid 1px black;
+}
+
+header, footer {
+    height: 100px;
+    clear: both;
+}
+
+
+.one-row {
+    height: 200px;
+}
+
+.two-row-one, .two-row-two {
+    float: left;
+    height: 300px;
+}
+
+.two-row-one {
+    width: 40%;
+}
+
+.two-row-two {
+    width: 60%;
+}

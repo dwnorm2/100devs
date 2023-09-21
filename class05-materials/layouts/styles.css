@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, footer, section {
+    background-color: grey;
+    border: solid 1px black;
+}
+
+header, footer {
+    height: 200px;
+    clear: both;
+}
+
+section {
+    height: 400px;
+    width: 33.33333%;
+    float: left;
+}
+
+@media screen and (max-width: 768px) { 
+    section {
+        float: none;
+        width: auto;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 950px)  { 
+    section {
+       background-color: aqua;
+    }
+}
+
+@media screen and (min-width: 1200px)  { 
+    header, footer {
+       max-width: 1200px;
+       margin: 0 auto;
+    }
+}

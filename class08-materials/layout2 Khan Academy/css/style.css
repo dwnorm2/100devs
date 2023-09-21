@@ -1,0 +1,194 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+  font-family: "Lato", sans-serif;
+}
+
+header {
+  border-bottom: solid rgb(210, 210, 210) 1px;
+  font-weight: bold;
+  margin-top: -5px;
+}
+
+nav {
+  /* background-color: aqua; */
+  height: 70px;
+
+  /* margin: 0 auto; */
+}
+
+select {
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+li {
+  float: left;
+  margin: 25px 15px;
+}
+
+.logo {
+  width: 230px;
+  margin: 5px auto;
+  display: block;
+  float: left;
+}
+
+.leftNavul,
+.logoContainer,
+.rightNavul {
+  width: 33.33333%;
+  float: left;
+  /* border: red solid 1px; */
+}
+
+/* .outer {
+  position: relative;
+} */
+
+.liContainer {
+  margin: 0 auto;
+  /* border: pink solid 1px; */
+  width: fit-content;
+}
+
+.rightNavul {
+  margin-top: 8px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+}
+
+footer {
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.form * {
+  /* float: left; */
+}
+.search-field {
+  width: 180px;
+  height: 35px;
+  margin-bottom: -40px;
+  padding: 5px 20px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: rgb(228, 228, 228);
+}
+
+form {
+  margin-top: -6px;
+}
+
+::placeholder {
+  color: rgb(54, 106, 234);
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+  margin-top: 7px;
+}
+
+select {
+  color: rgb(54, 106, 234);
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(54, 106, 234);
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  float: left;
+}
+
+main img {
+  width: 600px;
+  float: left;
+}
+
+main section {
+  float: left;
+}
+
+main {
+  margin: 50px auto;
+  width: fit-content;
+  height: fit-content;
+  /* border: blue solid 1px; */
+}
+
+main section {
+  width: 600px;
+  margin-top: 130px;
+  padding-right: 180px;
+}
+
+main section img {
+  width: 250px;
+  display: block;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: normal;
+  font-family: serif;
+}
+
+p {
+  margin-top: 35px;
+  line-height: 2;
+}
+
+.buttons {
+  margin-top: 35px;
+}
+
+.buttons a {
+  color: white;
+  background-color: rgb(54, 106, 234);
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
