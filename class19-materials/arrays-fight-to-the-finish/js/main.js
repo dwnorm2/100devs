@@ -9,10 +9,6 @@ movieTitles.forEach((movieTitle, indexNum) => {
 
 let numArr = [10, 20, 30];
 
-// for (let i = 0; i < numArr.length; i++) {
-//   numArr[i] += 3;
-// }
-
 numArr.forEach((x, i) => {
   numArr[i] += 3;
 });
