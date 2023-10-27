@@ -27,8 +27,8 @@ function threeNums(n1, n2, n3) {
 //Create a function that returns heads or tails randomly and as fairly as possible. Call the function.
 
 function headsTails() {
-  let num = Math.ranodm() * 10;
-  return num <= 5 ? "heads" : "tails";
+  let num = Math.random();
+  return num < 0.5 ? "heads" : "tails";
 }
 
 //*Loops*
