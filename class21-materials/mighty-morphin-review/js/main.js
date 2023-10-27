@@ -1,13 +1,14 @@
 // *Variables*
 // Declare a variable, reassign it to your fav holiday, make sure it is in all caps, and print the value to the console
 
-let holiday = "CHRISTMAS";
+let holiday = "christmas";
+holiday = holiday.toUpperCase();
 console.log(holiday);
 
 //Declare a variable, assign it a string, alert the last three characters in the string (Use your google-fu and the MDN)
 
 let x = "hello";
-alert(x.slice(2));
+alert(x.slice(-3));
 
 // *Functions*
 // Create a function that takes in 5 numbers. Subtract all five from 100. Alert the absolute value of the difference. Call the function.
@@ -37,4 +38,14 @@ function loopyCoin(x) {
   for (i = 0; i < x; i++) {
     console.log(headsTails());
   }
+}
+
+// In this kata you will create a function that takes in a list and returns a list with the reverse order.
+
+// Examples (Input -> Output)
+// * [1, 2, 3, 4]  -> [4, 3, 2, 1]
+// * [9, 2, 0, 7]  -> [7, 0, 2, 9]
+
+function reverseList(list) {
+  return list.reverse();
 }
