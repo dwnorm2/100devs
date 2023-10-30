@@ -143,3 +143,5 @@ const transportation = data.reduce((obj, item) => {
   return obj;
 }, {});
 console.log(transportation);
+
+asd;
