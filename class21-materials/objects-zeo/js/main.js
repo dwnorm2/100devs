@@ -24,3 +24,11 @@ stopWatch.add5Seconds = function () {
 
 stopWatch.add5Seconds();
 stopWatch.currentTime;
+
+stopWatch.start = function () {
+  console.log("starting");
+};
+
+stopWatch.stop = function () {
+  console.log("stopping");
+};
