@@ -19,3 +19,11 @@ function MakeFighter(fighterStyle, fighterGender, fighterSize, fighterName) {
     console.log(`new fighter name is ${this.name}`);
   };
 }
+
+let Dan = new MakeFighter("BJJ", "male", "large", "Dan");
+
+let Bob = new MakeFighter("BJJ", "male", "large", "Dan");
+
+MakeFighter.prototype.isChampion = true;
+
+console.log(Bob.isChampion);
