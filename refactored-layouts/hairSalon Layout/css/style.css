@@ -1,0 +1,309 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+  font-weight: 300;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+  font-size: 62.5%;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header svg {
+  width: 0.8em;
+  padding-top: 3px;
+}
+
+header li {
+  display: inline-block;
+  font-family: "Noto Serif", serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+header > ul {
+  display: flex; /* Use Flexbox */
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+  padding: 15px 50px;
+}
+
+.nav {
+  text-align: center;
+}
+
+.nav li {
+  margin-right: 30px;
+}
+
+.mainTop {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  background-image: url(../hairSalon-images/hero-image.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Center items vertically */
+}
+
+.hero {
+  margin: 150px;
+  margin-top: 220px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 100;
+  letter-spacing: 10px;
+  line-height: 100px;
+}
+
+.hero > span {
+  letter-spacing: 4px;
+}
+
+.hero h1,
+.hero span,
+.hero a {
+  margin-bottom: 30px;
+}
+
+.hero a,
+.momentum a,
+.offer a {
+  margin-top: 30px;
+  width: fit-content;
+  padding: 15px 30px;
+  font-size: 0.8rem;
+}
+
+.promo {
+  background-color: black;
+  width: fit-content;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.promo a {
+  background-color: white;
+  color: black;
+  margin: 20px 20px;
+}
+
+.white {
+  border-left: solid white 4px;
+  padding: 20px;
+  font-size: 0.8rem;
+}
+
+.promo h3 {
+  padding: 0 20px;
+}
+
+.promo h3 div {
+  margin-top: 20px;
+}
+
+.hours {
+  margin-top: 300px;
+  padding-bottom: 100px;
+}
+
+.three {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1000px;
+  display: flex; /* Use Flexbox */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.three section {
+  width: 33.3333%;
+  padding: 0 30px;
+}
+
+.three section * {
+  margin-bottom: 20px;
+}
+
+.three h3 {
+  font-weight: bold;
+}
+
+.three p,
+.momentum p {
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+
+.momentum {
+  margin-top: 120px;
+  background-color: rgb(243 244 246);
+  padding: 50px 130px;
+  display: flex; /* Use Flexbox */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.momentum div {
+  max-width: 890px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.momentum div section,
+.momentum div img {
+}
+
+.momentum div img {
+  width: 80%%;
+  height: auto;
+}
+
+.momentum section {
+  padding-right: 100px;
+}
+
+.momentum h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.stylists {
+  margin: 80px auto;
+  max-width: 910px;
+  margin-bottom: 80px;
+  display: flex; /* Use Flexbox */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.stylists div {
+  width: 33.33333%;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.stylists img {
+  width: 100%;
+}
+
+.stylists div section {
+  width: fit-content;
+  padding: 10px 40px;
+  font-size: 0.8rem;
+  background-color: black;
+  color: white;
+  margin: -30px auto;
+  position: relative;
+}
+
+.stylists div section span {
+  font-size: 0.6rem;
+  color: rgb(208, 208, 208);
+  display: block;
+  margin-top: 8px;
+}
+
+.offer {
+  margin: 0 auto;
+  max-width: 890px;
+  margin-top: 100px;
+  height: 400px;
+  background-image: url(../hairSalon-images/Promo-Banner-Image.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 80px;
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.offer * {
+  margin-bottom: 20px;
+}
+
+.offer h3 {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.lookbookText {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.photos {
+  max-width: 910px;
+  margin: 0 auto;
+  display: flex; /* Use Flexbox */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.photoColumn {
+  width: 33.333333%;
+  padding: 10px;
+}
+
+.photoColumn img {
+  width: 100%;
+  margin-top: 17px;
+}
+
+.black {
+  background-color: black;
+  color: rgb(191, 191, 191);
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 281px;
+  margin-top: 17px;
+  font-size: 200px;
+}
+
+.black p {
+  padding-top: 25px;
+  font-weight: 100;
+}
+
+.lookbookText {
+  font-size: 2rem;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
