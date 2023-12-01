@@ -10,7 +10,9 @@ function search() {
       console.log(data.docs);
 
       document.getElementById('name').textContent = data.docs[0].name;
+      document.getElementById('birth').textContent = data.docs[0].birth;
       document.getElementById('race').textContent = data.docs[0].race;
+      document.getElementById('height').textContent = data.docs[0].height;
       document.getElementById('race').textContent = data.docs[0].race;
       document.getElementById('wiki').href = data.docs[0].wikiUrl;
       document.getElementById('wiki').textContent = data.docs[0].wikiUrl;
