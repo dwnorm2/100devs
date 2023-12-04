@@ -34,7 +34,7 @@ function search() {
       document.getElementById('symbol').textContent = data.data.symbol;
       document.getElementById('price').textContent = Number(
         data.data.priceUsd
-      ).toFixed(2);
+      ).toFixed(data.data.priceUsd > 1 ? 2 : 4);
       document.getElementById('24hr').textContent = Number(
         data.data.changePercent24Hr
       ).toFixed(2);
@@ -48,7 +48,7 @@ function search() {
       console.log(`error ${err}`);
     });
 
-  // setTimeout(search, 5000);
+  setTimeout(search, 1000);
 }
 
 let assets;
@@ -58,12 +58,12 @@ function getAssets() {
     .then((red) => red.json())
     .then((data) => {
       assets = data.data;
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         document.getElementById(`coin${i}`).textContent = data.data[i].name;
         document.getElementById(`symbol${i}`).textContent = data.data[i].symbol;
         document.getElementById(`price${i}`).textContent = Number(
           data.data[i].priceUsd
-        ).toFixed(2);
+        ).toFixed(data.data[i].priceUsd > 1 ? 2 : 4);
         document.getElementById(`24hr${i}`).textContent = Number(
           data.data[i].changePercent24Hr
         ).toFixed(2);
@@ -78,7 +78,7 @@ function getAssets() {
       console.log(`error ${err}`);
     });
 
-  // setTimeout(search, 5000);
+  setTimeout(search, 1000);
 }
 
 getAssets();
