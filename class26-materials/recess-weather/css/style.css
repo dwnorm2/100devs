@@ -31,18 +31,43 @@ body {
 span {
   font-size: 5rem;
   font-weight: 550;
-  line-height: 2;
+  line-height: 1.5;
 }
 div {
   display: flex;
   gap: 10px;
 }
 
-img{
-  display: block;
-  width: 80vw;
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
+img{
+  display: block;
+  width: 30vh;
+  object-fit: cover;
+  height: 30vh;
+ 
+  /* height:30vh; */
+  /* float: left; */
+}
+
+
+
+
+
+
+
+#indoor {
+  display: none;
+  /* height: 337px; */
+
+}
 
 /******************************************
 /* ADDITIONAL STYLES

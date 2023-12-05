@@ -38,16 +38,22 @@ function weather() {
 }
 
 let body = document.querySelector('body');
+let playgroundImg = document.getElementById('outdoor');
+let classroomImg = document.getElementById('indoor');
 
 weather()
   .then(({ realFeel, precipitation }) => {
     // precipitation = true;
-    // realFeel = 95;
+    // realFeel = 20;
     if (realFeel >= 90 || realFeel < 30) {
       body.style.backgroundColor = 'yellow';
+      classroomImg.style.display = 'block';
+      playgroundImg.style.display = 'block';
     }
     if (precipitation === true || realFeel < 9 || realFeel > 95) {
       body.style.backgroundColor = 'red';
+      playgroundImg.style.display = 'none';
+      classroomImg.style.display = 'block';
     }
   })
   .catch((error) => {
