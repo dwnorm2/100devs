@@ -8,6 +8,10 @@
 
 }
 
+html {
+  font-size: 62.5%;
+}
+
 
 
 /******************************************
@@ -23,6 +27,11 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: green;
   /* margin: 0 auto; */
+}
+span {
+  font-size: 5rem;
+  font-weight: 550;
+  line-height: 2;
 }
 div {
   display: flex;
