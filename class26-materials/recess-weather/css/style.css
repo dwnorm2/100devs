@@ -14,11 +14,19 @@
 /* LAYOUT
 /*******************************************/
 body {
-  /* display: flex;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   height: 100vh;
   padding: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: green;
+  /* margin: 0 auto; */
+}
+div {
+  display: flex;
+  gap: 10px;
 }
 
 img{

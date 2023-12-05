@@ -9,13 +9,12 @@ fetch(
   .then((data) => {
     console.log(data[0]);
     document.getElementById('temp').textContent =
-      data[0].Temperature.Imperial.Value;
-    // document.getElementById('windChill').textContent =
-    //   data[0].WindChillTemperature.Imperial.Value;
+      data[0].Temperature.Imperial.Value + 'f';
     document.getElementById('precipitation').textContent =
       data[0].HasPrecipitation;
-    document.getElementById('RealFeel').textContent =
-      data[0].RealFeelTemperature.Imperial.Value;
+    document.getElementById('RealFeel').textContent = `${
+      data[0].RealFeelTemperature.Imperial.Value
+    }f (${data[0].RealFeelTemperature.Imperial.Phrase.toLowerCase()})`;
   })
   .catch((err) => {
     console.log(`error ${err}`);
