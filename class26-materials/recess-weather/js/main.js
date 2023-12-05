@@ -61,7 +61,7 @@ function weather() {
         }f (${data[0].RealFeelTemperature.Imperial.Phrase.toLowerCase()})`;
         realFeel = data[0].RealFeelTemperature.Imperial.Value;
         precipitation = data[0].HasPrecipitation;
-        resolve(realFeel);
+        resolve({ realFeel, precipitation });
       })
       .catch((err) => {
         console.error(`Error: ${err.message}`);
@@ -74,11 +74,12 @@ let body = document.querySelector('body');
 
 // Usage
 weather()
-  .then((realFeelValue) => {
-    if (realFeelValue < 50) {
+  .then(({ realFeel, precipitation }) => {
+    console.log(precipitation);
+    if (precipitation === false) {
       body.style.backgroundColor = 'blue';
     }
-    // You can use the realFeelValue here
+    // You can use both realFeel and precipitation here
   })
   .catch((error) => {
     // Handle errors if needed
