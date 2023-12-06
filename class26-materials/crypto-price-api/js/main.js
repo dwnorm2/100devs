@@ -79,40 +79,41 @@ function updateUI(data) {
   ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
 }
 
-let assets;
-
 function getAssets() {
   fetch(`https://api.coincap.io/v2/assets`)
     .then((red) => red.json())
     .then((data) => {
-      assets = data.data;
-      for (let i = 0; i < 5; i++) {
-        document.getElementById(`coin${i}`).textContent = data.data[i].name;
-        document.getElementById(`symbol${i}`).textContent = data.data[i].symbol;
-        document.getElementById(`price${i}`).textContent = Number(
-          data.data[i].priceUsd
-        ).toFixed(data.data[i].priceUsd > 1 ? 2 : 4);
-        document.getElementById(`cap${i}`).textContent = Number(
-          data.data[i].marketCapUsd /
-            (data.data[i].marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
-        ).toFixed(2);
-        document.getElementById(`bOrM${i}`).textContent =
-          data.data[i].marketCapUsd >= 1000000000 ? 'B' : 'M';
-        document.getElementById(`24hr${i}`).textContent = Number(
-          data.data[i].changePercent24Hr
-        ).toFixed(2);
-        let ticker = data.data[i].symbol;
-        document.getElementById(
-          `logo${i}`
-        ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
-      }
-      console.log(assets);
+      updateAssetsUI(data.data);
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
 
   // setTimeout(search, 1000);
+}
+
+function updateAssetsUI(data) {
+  for (let i = 0; i < 5; i++) {
+    document.getElementById(`coin${i}`).textContent = data[i].name;
+    document.getElementById(`symbol${i}`).textContent = data[i].symbol;
+    document.getElementById(`price${i}`).textContent = Number(
+      data[i].priceUsd
+    ).toFixed(data[i].priceUsd > 1 ? 2 : 4);
+    document.getElementById(`cap${i}`).textContent = Number(
+      data[i].marketCapUsd /
+        (data[i].marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
+    ).toFixed(2);
+    document.getElementById(`bOrM${i}`).textContent =
+      data[i].marketCapUsd >= 1000000000 ? 'B' : 'M';
+    document.getElementById(`24hr${i}`).textContent = Number(
+      data[i].changePercent24Hr
+    ).toFixed(2);
+    let ticker = data[i].symbol;
+    document.getElementById(
+      `logo${i}`
+    ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
+  }
+  console.log(assets);
 }
 
 getAssets();
