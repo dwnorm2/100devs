@@ -44,7 +44,7 @@ let classroomImg = document.getElementById('indoor');
 weather()
   .then(({ realFeel, precipitation }) => {
     // precipitation = true;
-    // realFeel = 20;
+    // realFeel = 1;
     if (realFeel >= 90 || realFeel < 30) {
       body.style.backgroundColor = 'yellow';
       classroomImg.style.display = 'block';
