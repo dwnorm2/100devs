@@ -1,3 +1,5 @@
+//add conditions for css styling of green/red depending on + or - 24hr change
+
 document.querySelector('button').addEventListener('click', changeCoin);
 document.querySelector('button').addEventListener('click', search);
 
@@ -22,33 +24,59 @@ input.addEventListener('keypress', function (event) {
     document.querySelector('button').click();
   }
 });
-search();
 
 function search() {
   fetch(`https://api.coincap.io/v2/assets/${coinName}`)
     .then((red) => red.json())
     .then((data) => {
-      console.log(data.data);
-
-      document.getElementById('coin').textContent = data.data.name;
-      document.getElementById('symbol').textContent = data.data.symbol;
-      document.getElementById('price').textContent = Number(
-        data.data.priceUsd
-      ).toFixed(data.data.priceUsd > 1 ? 2 : 4);
-      document.getElementById('24hr').textContent = Number(
-        data.data.changePercent24Hr
-      ).toFixed(2);
-      let ticker = data.data.symbol;
-      document.querySelector(
-        'img'
-      ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
+      if (data.data) {
+        // Valid response for cryptocurrency name
+        updateUI(data.data);
+      } else {
+        // Invalid response for cryptocurrency name, try searching by ticker
+        return fetch(`https://api.coincap.io/v2/assets?search=${coinName}`);
+      }
     })
-
+    .then((secondResponse) => {
+      if (secondResponse) {
+        return secondResponse.json();
+      }
+    })
+    .then((data) => {
+      if (data.data && data.data.length > 0) {
+        // Valid response for ticker search
+        updateUI(data.data[0]);
+      } else {
+        console.log('Cryptocurrency not found');
+      }
+    })
     .catch((err) => {
       console.log(`error ${err}`);
     });
 
-  setTimeout(search, 1000);
+  // setTimeout(search, 1000);
+}
+
+function updateUI(data) {
+  console.log(data);
+
+  document.getElementById('coin').textContent = data.name;
+  document.getElementById('symbol').textContent = data.symbol;
+  document.getElementById('price').textContent = Number(data.priceUsd).toFixed(
+    data.priceUsd > 1 ? 2 : 4
+  );
+  document.getElementById('cap').textContent = Number(
+    data.marketCapUsd / (data.marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
+  ).toFixed(2);
+  document.getElementById('bOrM').textContent =
+    data.marketCapUsd >= 1000000000 ? 'B' : 'M';
+  document.getElementById('24hr').textContent = Number(
+    data.changePercent24Hr
+  ).toFixed(2);
+  let ticker = data.symbol;
+  document.querySelector(
+    'img'
+  ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
 }
 
 let assets;
@@ -64,6 +92,12 @@ function getAssets() {
         document.getElementById(`price${i}`).textContent = Number(
           data.data[i].priceUsd
         ).toFixed(data.data[i].priceUsd > 1 ? 2 : 4);
+        document.getElementById(`cap${i}`).textContent = Number(
+          data.data[i].marketCapUsd /
+            (data.data[i].marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
+        ).toFixed(2);
+        document.getElementById(`bOrM${i}`).textContent =
+          data.data[i].marketCapUsd >= 1000000000 ? 'B' : 'M';
         document.getElementById(`24hr${i}`).textContent = Number(
           data.data[i].changePercent24Hr
         ).toFixed(2);
@@ -78,9 +112,10 @@ function getAssets() {
       console.log(`error ${err}`);
     });
 
-  setTimeout(search, 1000);
+  // setTimeout(search, 1000);
 }
 
 getAssets();
+search();
 
-//add conditions for css styling of green/red depending on + or - 24hr change
+// Add conditions for CSS styling of green/red depending on + or - 24hr change
