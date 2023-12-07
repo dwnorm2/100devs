@@ -1,27 +1,27 @@
 //add conditions for css styling of green/red depending on + or - 24hr change
 
-document.querySelector('button').addEventListener('click', changeCoin);
-document.querySelector('button').addEventListener('click', search);
+document.querySelector("button").addEventListener("click", changeCoin);
+document.querySelector("button").addEventListener("click", search);
 
-let input = document.querySelector('input');
+let input = document.querySelector("input");
 
-let coinName = document.querySelector('input').value.toLowerCase();
+let coinName = document.querySelector("input").value.toLowerCase();
 
 function changeCoin() {
   coinName = document
-    .querySelector('input')
+    .querySelector("input")
     .value.toLowerCase()
-    .replaceAll(' ', '');
+    .replaceAll(" ", "");
 }
 
-input.addEventListener('keypress', function (event) {
+input.addEventListener("keypress", function (event) {
   // If the user presses the "Enter" key on the keyboard
-  if (event.key === 'Enter') {
+  if (event.key === "Enter") {
     changeCoin();
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    document.querySelector('button').click();
+    document.querySelector("button").click();
   }
 });
 
@@ -47,7 +47,7 @@ function search() {
         // Valid response for ticker search
         updateUI(data.data[0]);
       } else {
-        console.log('Cryptocurrency not found');
+        console.log("Cryptocurrency not found");
       }
     })
     .catch((err) => {
@@ -60,22 +60,22 @@ function search() {
 function updateUI(data) {
   console.log(data);
 
-  document.getElementById('coin').textContent = data.name;
-  document.getElementById('symbol').textContent = data.symbol;
-  document.getElementById('price').textContent = Number(data.priceUsd).toFixed(
+  document.getElementById("coin").textContent = data.name;
+  document.getElementById("symbol").textContent = data.symbol;
+  document.getElementById("price").textContent = Number(data.priceUsd).toFixed(
     data.priceUsd > 1 ? 2 : 4
   );
-  document.getElementById('cap').textContent = Number(
+  document.getElementById("cap").textContent = Number(
     data.marketCapUsd / (data.marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
   ).toFixed(2);
-  document.getElementById('bOrM').textContent =
-    data.marketCapUsd >= 1000000000 ? 'B' : 'M';
-  document.getElementById('24hr').textContent = Number(
+  document.getElementById("bOrM").textContent =
+    data.marketCapUsd >= 1000000000 ? "B" : "M";
+  document.getElementById("24hr").textContent = Number(
     data.changePercent24Hr
   ).toFixed(2);
   let ticker = data.symbol;
   document.querySelector(
-    'img'
+    "img"
   ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
 }
 
@@ -104,7 +104,7 @@ function updateAssetsUI(data) {
         (data[i].marketCapUsd >= 1000000000 ? 1000000000 : 1000000)
     ).toFixed(2);
     document.getElementById(`bOrM${i}`).textContent =
-      data[i].marketCapUsd >= 1000000000 ? 'B' : 'M';
+      data[i].marketCapUsd >= 1000000000 ? "B" : "M";
     document.getElementById(`24hr${i}`).textContent = Number(
       data[i].changePercent24Hr
     ).toFixed(2);
