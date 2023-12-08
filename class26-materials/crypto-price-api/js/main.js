@@ -74,8 +74,8 @@ function updateUI(data) {
     data.changePercent24Hr
   ).toFixed(2);
   let ticker = data.symbol;
-  document.querySelector(
-    "img"
+  document.getElementById(
+    "logo"
   ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
 }
 
