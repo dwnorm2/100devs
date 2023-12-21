@@ -73,6 +73,12 @@ function updateUI(data) {
   document.getElementById("24hr").textContent = Number(
     data.changePercent24Hr
   ).toFixed(2);
+  if (Number(data.changePercent24Hr).toFixed(2) > 0) {
+    document.querySelector(".change").style.background = "#39daa2";
+  }
+  if (Number(data.changePercent24Hr).toFixed(2) < 0) {
+    document.querySelector(".change").style.background = "rgb(254, 46, 46)";
+  }
   let ticker = data.symbol;
   document.getElementById(
     "logo"
@@ -93,7 +99,7 @@ function getAssets() {
 }
 
 function updateAssetsUI(data) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     document.getElementById(`coin${i}`).textContent = data[i].name;
     document.getElementById(`symbol${i}`).textContent = data[i].symbol;
     document.getElementById(`price${i}`).textContent = Number(
@@ -108,12 +114,21 @@ function updateAssetsUI(data) {
     document.getElementById(`24hr${i}`).textContent = Number(
       data[i].changePercent24Hr
     ).toFixed(2);
+    let percent = Number(data[i].changePercent24Hr).toFixed(2);
+    console.log(percent);
+    if (percent > 0) {
+      document.getElementById(`change${i}`).style.background = "#39daa2";
+    }
+    if (percent < 0) {
+      document.getElementById(`change${i}`).style.background =
+        "rgb(254, 46, 46)";
+    }
     let ticker = data[i].symbol;
     document.getElementById(
       `logo${i}`
     ).src = `https://assets.coincap.io/assets/icons/${ticker.toLowerCase()}@2x.png`;
   }
-  console.log(assets);
+  // console.log(assets);
 }
 
 getAssets();
