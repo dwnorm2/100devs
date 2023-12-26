@@ -1,4 +1,3 @@
-//Example fetch using pokemonapi.co
 document.querySelector("button").addEventListener("click", getFetch);
 let todaysDate = new Date().toISOString().slice(0, 10);
 document.querySelector("input").value = todaysDate;
