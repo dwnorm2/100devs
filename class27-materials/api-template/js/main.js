@@ -13,12 +13,12 @@ function getFetch() {
   fetch(url)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      document.querySelector("img").src = "#";
+      document.getElementById("imageOfDay").src = "#";
       document.querySelector("iframe").src = "";
       console.log(data);
 
       data.media_type == "image"
-        ? (document.querySelector("img").src = data.hdurl) &&
+        ? (document.getElementById("imageOfDay").src = data.hdurl) &&
           (document.querySelector("iframe").style.display = "none")
         : (document.querySelector("iframe").style.display = "block") &&
           (document.querySelector("iframe").src = data.url);
@@ -32,3 +32,5 @@ function getFetch() {
 }
 
 getFetch();
+
+//todo: buttons to scroll through dates
