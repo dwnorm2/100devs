@@ -34,3 +34,4 @@ function getFetch() {
 getFetch();
 
 //todo: buttons to scroll through dates
+//changing date activates getFetch()
