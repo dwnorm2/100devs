@@ -1,11 +1,25 @@
 document.querySelector("button").addEventListener("click", getFetch);
-let todaysDate = new Date().toISOString().slice(0, 10);
+// Get the current date
+let currentDate = new Date();
+
+// Format the date as YYYY-MM-DD
+let todaysDate =
+  currentDate.getFullYear() +
+  "-" +
+  ("0" + (currentDate.getMonth() + 1)).slice(-2) +
+  "-" +
+  ("0" + currentDate.getDate()).slice(-2);
+
 document.querySelector("input").value = todaysDate;
 
 function getFetch() {
-  const choice = document.querySelector("input").value;
+  document.querySelector("span").textContent = "";
+  let choice = document.querySelector("input").value;
+
   if (choice > todaysDate) {
     choice = todaysDate;
+    document.querySelector("span").textContent =
+      "Please select today's date or before";
   }
   const key = "37xtVRoiW2VLjd3aE8UMcan0svzrKxkmlZWSXgDI";
   const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${choice}`;

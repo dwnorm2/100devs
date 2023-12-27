@@ -74,6 +74,10 @@ h3 {
   line-height: 1.5;
 }
 
+span {
+  margin-top: 10px;
+}
+
 iframe {
   display: block;
   margin: 0 auto;
