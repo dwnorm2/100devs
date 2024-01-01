@@ -17,16 +17,10 @@ function getFetch() {
       document.querySelector("h2").textContent = data.name;
       document.querySelector("h3").textContent = data.classes[0].name;
 
-      //   for (let i = 0; i < data.subclasses.length; i++) {
-      //     let li = document.createElement("li");
-      //     ul.appendChild(li);
-      //     li.textContent = data.subclasses[i].name;
-      //   }
-
-      data.subclasses.forEach((el) => {
+      data.subclasses.forEach((obj) => {
         let li = document.createElement("li");
         ul.appendChild(li);
-        li.textContent = el.name;
+        li.textContent = obj.name;
       });
     })
     .catch((err) => {
