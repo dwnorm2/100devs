@@ -2,7 +2,7 @@
 //Your pokemon party order which is a list of pokemon has been leaked to Misty. Please create a function that reverses your list and prints it to the console.
 
 let party = [1, 2, 3, 4];
-let reversedParty = (party) => party.reverse();
+let reversedParty = (party) => console.log(party.reverse());
 reversedParty(party);
 
 //Given two integer arrays a, b, both of length >= 1, create a program that returns true if the sum of the squares of each element in a is strictly greater than the sum of the cubes of each element in b.
@@ -37,3 +37,12 @@ function sumOfNums(arr) {
 }
 
 sumOfNums(arr);
+
+// Write a function that returns the total surface area and volume of a box as an array: [area, volume]
+
+function getSize(width, height, depth) {
+  return [
+    2 * width * depth + 2 * height * depth + 2 * width * height,
+    width * height * depth,
+  ];
+}
