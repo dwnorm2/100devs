@@ -24,6 +24,9 @@ class Cat extends Dog {
   constructor(name, breed, size) {
     super(name, breed, size);
   }
+  speak() {
+    console.log("meow!");
+  }
 }
 
 let pepper = new Dog("Pepper", "ALD", "Medium");
