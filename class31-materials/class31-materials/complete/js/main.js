@@ -1,51 +1,100 @@
+// class Animal {
+//   constructor(name) {
+//     this._name = name;
+//   }
+//   get name() {
+//     return this._name;
+//   }
+//   speak() {
+//     console.log(`${this._name} makes a sound`);
+//   }
+// }
+// class Dog extends Animal {
+//   constructor(name, breed) {
+//     super(name);
+//     this._breed = breed;
+//   }
+//   get breed() {
+//     return this._breed;
+//   }
+//   speak() {
+//     super.speak();
+//     console.log(`${this.name} barks`);
+//   }
+// }
+// class Cat extends Animal {
+//   constructor(name, breed) {
+//     super(name);
+//     this._breed = breed;
+//   }
+//   get breed() {
+//     return this._breed;
+//   }
+//   speak() {
+//     super.speak();
+//     console.log(`${this.name} meows`);
+//   }
+// }
+
+// let simba = new Dog("Simba", "Shepard");
+// let machi = new Dog("The Machine", "Pitbull");
+// let salem = new Cat("Salem", "American Shorthair");
+
+// let farm = [simba, machi, salem];
+
+// for (a of farm) {
+//   a.speak();
+// }
+
+//refactor
+
 class Animal {
   constructor(name) {
     this._name = name;
   }
+
   get name() {
     return this._name;
   }
+
   speak() {
-    console.log(`${this._name} makes a sound`);
+    console.log(`${this.name} says hi!`);
   }
 }
-class Dog extends Animal {
+
+class WildAnimal extends Animal {
+  constructor(name, species) {
+    super(name);
+    this._species = species;
+  }
+
+  get species() {
+    return this._species;
+  }
+}
+
+class DomesticatedAnimal extends Animal {
   constructor(name, breed) {
     super(name);
     this._breed = breed;
   }
+
   get breed() {
     return this._breed;
   }
-  speak() {
-    super.speak();
-    console.log(`${this.name} barks`);
+}
+
+class Zebra extends WildAnimal {
+  constructor(name, species) {
+    super(name, species);
   }
 }
-class Cat extends Animal {
+
+class Dog extends DomesticatedAnimal {
   constructor(name, breed) {
-    super(name);
-    this._breed = breed;
-  }
-  get breed() {
-    return this._breed;
-  }
-  speak() {
-    super.speak();
-    console.log(`${this.name} meows`);
+    super(name, breed);
   }
 }
-
-let simba = new Dog("Simba", "Shepard");
-let machi = new Dog("The Machine", "Pitbull");
-let salem = new Cat("Salem", "American Shorthair");
-
-let farm = [simba, machi, salem];
-
-for (a of farm) {
-  a.speak();
-}
-
 // class Animal {
 //   constructor(name) {
 //     this._name = name;
