@@ -86,9 +86,18 @@ class Front extends Contractor {
   }
 }
 
-class Back extends Front {
+class Back extends Contractor {
   constructor(name, role, tech) {
-    super(name, role, tech);
+    super(name, role);
+    this._tech = tech;
+  }
+  get tech() {
+    return this._tech;
+  }
+  sayHello() {
+    console.log(
+      `Hello, I am on the ${this._role} team at #100Devs and I use ${this._tech}`
+    );
   }
 }
 
