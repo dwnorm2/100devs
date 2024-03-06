@@ -9,9 +9,9 @@ console.log(num);
 //create a variable that holds a value from the input
 let bob = Number(document.getElementById("danceDanceRevolution").value);
 //add 25 to that number
-bob += 25;
+// bob += 25;
 //alert that number
-alert(bob);
+//alert(bob);
 //--- Hard
 //create a variable that holds the h1
 let header1 = document.querySelector("h1");
@@ -19,5 +19,7 @@ let header1 = document.querySelector("h1");
 header1.addEventListener("click", addVars);
 
 function addVars() {
+  let bob = Number(document.getElementById("danceDanceRevolution").value);
+  bob += 25;
   console.log(bob + num);
 }
