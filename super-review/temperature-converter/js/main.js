@@ -11,5 +11,5 @@ function cToF() {
   temp = temp * 1.8 + 32;
 
   //show the value
-  document.querySelector("h2").innerText = temp;
+  document.querySelector("h2").textContent = temp;
 }
