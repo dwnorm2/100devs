@@ -30,3 +30,42 @@ const makeSmoothie = async () => {
 };
 
 makeSmoothie().then((smoothie) => console.log(smoothie));
+
+//you can wrap code in try{} catch{} block
+
+const badSmoothie = async () => {
+  try {
+    const a = await getFruit("pineapple");
+    const b = await getFruit("strawberry");
+    const smoothie = await Promise.all([a, b]);
+    //Promise.all tells all the promises in array to run concurrently
+    return smoothie;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+badmoothie().then((smoothie) => console.log(smoothie));
+
+//async await doesn't work well in .map , use for loops instead
+
+const fruits = ["peach", "pineapple", "strawberry"];
+const smoothie = fruits.map((v) => getFruit(v));
+
+const fruitLoop = async () => {
+  for await (const value of smoothie) {
+    console.log(value);
+  }
+};
+
+console.log(fruitLoop());
+
+// you can use await inside of conditionals
+
+const fruitInspection = async () => {
+  if ((await getFruit("peach")) === "good") {
+    console.log("looks peachy!");
+  }
+};
+
+fruitInspection();
