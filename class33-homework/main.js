@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 const promise = fetch(`myurl`);
 
 //then this
