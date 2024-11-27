@@ -6,7 +6,6 @@
 //If under 30, tell them they can not rent fancy cars affordably
 //If under over 30, tell them there is nothing left to look forward too
 
-
 //--- Harder
 //On click of the h1
 //Take the value from the input
